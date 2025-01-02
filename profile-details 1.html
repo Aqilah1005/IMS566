@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>UiTM Student Profile - Nur Auni Aqilah</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap" rel="stylesheet">
+      
+    <!-- style.css -->
+    <link rel="stylesheet" href="css/style.css"/>    
+</head>
+<body background="img/background.jpg">
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+    <div class="container">
+        <img src="img/logo uitm.png" alt="USEP logo" width="100px">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Profiles</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="profiles.html">View All Profiles</a></li>
+                        <li><a class="dropdown-item" href="create-profile.html">Create Profile</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Login</a>
+                </li>
+            </ul>
+            <div class="form-check form-switch">
+                <input class="form-check-input" type="checkbox" id="darkModeToggle" />
+                <label class="form-check-label" for="darkModeToggle" id="themeLabel">Dark Mode</label>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Student Profile Section -->
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="img/student 1.jpg" alt="Student Photo" class="img-fluid rounded-circle">
+        </div>
+        <div class="col-md-8">
+            <h2>Nur Auni Aqilah Binti Nur Irwan Effendy</h2>
+            <p><strong>Student ID:</strong>2024767217</p>
+            <p><strong>Faculty:</strong> School Of Information Science College of Computing, Informatics and Media.</p>
+            <p><strong>Email:</strong> <a href= "mailto:2024767217@student.uitm.edu.my"> 2024767217@student.uitm.edu.my</a></p>
+            <p><strong>Phone:</strong> +601156923485</p>
+            <p><strong>Campus:</strong> UiTM Puncak Perdana, Selangor</p>
+            <p><strong>Quotes:</strong>"The future belongs to those who believe in the beauty of their dreams."
+            – Eleanor Roosevelt</p>
+            <div class="row">
+                <h2 class="title-center">Achievements and Awards</h2>
+              </div>
+              <div class="row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                  <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                      <h5 class="card-title">Best Final Year Project (Information Systems)</h5>
+                      <p class="card-text">
+                        Awarded to a student for the most innovative and impactful final year project in the Information Systems department at UiTM.<br>
+                        Description: This award recognizes the student's outstanding ability to integrate emerging technologies and methodologies to develop a solution addressing real-world business challenges in Information Systems.<br>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>              
+        </div>
+    </div>
+</div>
+
+<!--Back to profile-->
+<div class="mt-4 text-center">
+    <a href="profiles.html" class="btn btn-primary">Back to Profiles</a>
+</div>
+</div>
+
+<!-- Footer Section -->
+<footer class="text-center py-3" style="background: transparent;">
+    <p>&copy; 2024 UiTM Student E-Profile. All rights reserved.</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- Dark Mode Script -->
+<script>
+    function setTheme(theme) {
+        document.documentElement.setAttribute("data-bs-theme", theme);
+        localStorage.setItem("theme", theme);
+        document.getElementById("themeLabel").innerText = theme === "dark" ? "Dark Mode On" : "Dark Mode Off";
+    }
+
+    document
+        .getElementById("darkModeToggle")
+        .addEventListener("change", function (event) {
+            if (event.target.checked) {
+                setTheme("dark");
+            } else {
+                setTheme("");
+            }
+        });
+
+    window.onload = function () {
+        let savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            setTheme(savedTheme);
+            if (savedTheme === "dark") {
+                document.getElementById("darkModeToggle").checked = true;
+            }
+        }
+    };
+</script>
+
+</body>
+</html>
